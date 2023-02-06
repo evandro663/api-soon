@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  database: 
+    image: postgres
+    container_name: database_soon
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=soon_db
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  default:
+    name: network_soon
+    driver: bridge
