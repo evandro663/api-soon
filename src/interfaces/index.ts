@@ -9,3 +9,12 @@ export interface IJwt {
     password: string,
   }
 }
+
+export interface ISolicitacao {
+
+  tipoServico: string,
+  valorTotal: number,
+  distanciaTotal: number,
+  tempoTotal: number,
+  empresa: string
+}
