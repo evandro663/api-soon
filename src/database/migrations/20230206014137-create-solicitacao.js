@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('solicitacao', {
+    await queryInterface.createTable('solicitacaos', {
       id: { 
         type: Sequelize.INTEGER,
         allowNull: false, 
@@ -12,14 +12,11 @@ module.exports = {
       tipo_servico: {
         type: Sequelize.STRING,
       },
-      data_servico: {
+      createdAt: {
+        allowNull: false,
         type: Sequelize.DATE,
-      },
-      hora_servico: {
-        type: Sequelize.STRING,
-      },
-      tempo_total: {
-        type: Sequelize.STRING
+        field: 'created_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       valor_total: {
         type: Sequelize.INTEGER,
@@ -27,10 +24,16 @@ module.exports = {
       distancia_total: {
         type: Sequelize.INTEGER
       },
+      tempo_total: {
+        type: Sequelize.INTEGER
+      },
+      empresa: {
+        type: Sequelize.STRING
+      },
     });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('solicitacao');
+    await queryInterface.dropTable('solicitacaos');
   }
 };
