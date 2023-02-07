@@ -4,12 +4,11 @@ import db from '.';
 class Solicitacao extends Model {
   id!: number;
   tipoServico!: string;
-  dataServico!: string;
-  horaServico!: string;
+  createdAt!: Date;
   valorTotal!: number;
   distanciaTotal!: number;
   tempoTotal!: number;
-  // empresaId!: number;
+  empresa!: string;
 }
 
 Solicitacao.init({
@@ -23,14 +22,10 @@ Solicitacao.init({
     type: STRING,
     allowNull: false,
   },
-  dataServico: {
+  createdAt: {
     type: DATE,
     allowNull: false,
   },  
-  horaServico: {
-    type: STRING,
-    allowNull: false,
-  }, 
   valorTotal: {
     type: INTEGER,
     allowNull: false,
@@ -42,10 +37,14 @@ Solicitacao.init({
   tempoTotal: {
     type: INTEGER,
     allowNull: false,
+  },
+  empresa: {
+    type: STRING,
+    allowNull: false,
   }
 }, {
     sequelize: db,
-    modelName: 'solicitacao',
+    modelName: 'solicitacaos',
     underscored: true,
     timestamps: false,
   });
