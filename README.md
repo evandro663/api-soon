@@ -23,7 +23,7 @@ Para que a aplicação possa ser executada e testada em ambiente local de desenv
 ### Configuração inicial do ambiente
 
 1. Crie uma pasta em um local onde você tenha direitos de gravação e leitura;
-2. Descompacte o arquivo zip e copie os arquivos da aplicação para a pasta criada
+2. Descompacte o arquivo zip e copie os arquivos da aplicação para a pasta criada | também possível fazer o clone deste repositório diretamente na pasta criada anterioremente.
 3. Alterar dados de acesso ao banco de dados, caso seja necessário, editando os arquivos "docker-compose.yml" e src/database/config/config.ts.
 4. Todos os passos a seguir devem ser executados em linha de comando, a partir do local onde o projeto foi copiado
 5. Instalar os pacotes necessários para a execução da aplicação, digitando os comandos:
