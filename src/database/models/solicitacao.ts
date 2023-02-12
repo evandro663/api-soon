@@ -40,7 +40,7 @@ Solicitacao.init({
     allowNull: false,
   },
   distancia_total: {
-    type: INTEGER,
+    type: DECIMAL,
     allowNull: false,
   },
   tempo_total: {

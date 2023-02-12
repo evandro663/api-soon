@@ -14,7 +14,7 @@ const solicitacaoSchema = Joi.object({
     'string.empty': "O preenchimento da chave 'empresa' é obrigatório.",
     'any.required': "A chave 'empresa' é obrigatória para a chave 'Solicitacao'.",
   })
-});
+}).unknown(false).messages({ 'object.unknown': "A chave 'Solicitacao' possui uma chave desconhecida dentro da mesma. Verifique a documentação para obter as chaves válidas para 'Solicitacao'." });
 
 const veiculoSchema = Joi.array().items(Joi.object({
   placa: Joi.string().required().messages({
@@ -41,12 +41,12 @@ const veiculoSchema = Joi.array().items(Joi.object({
   })
 })).unique("placa").messages({
   'array.unique': 'Existem placas com valores repetidos. O valor deve ser único.'
-});
+}).strip (false).messages({ 'object.unknown': "A chave 'Veiculos' possui uma chave desconhecida dentro da mesma. Verifique a documentação para obter as chaves válidas para 'Veiculos'." });
 
 const defaultSchema = Joi.object({
   Solicitacao: Joi.required().messages({ 'any.required': "A chave 'Solicitacao' é obrigatória para esta requisição." }),
   Veiculos: Joi.required().messages({ 'any.required': "A chave 'Veiculos' é obrigatória para esta requisição." }),
-})
+}).unknown(false).messages({ 'object.unknown': "Apenas a chave 'Solicitacao' e a chave 'Veiculos' são válidas para solicitações. Verifique a documentação." });
 
 const listSchema = Joi.object({
   empresa: Joi.string().required().messages({
@@ -63,7 +63,7 @@ const listSchema = Joi.object({
     'string.pattern.base': "A chave 'endDate' deve estar no formato 'yyyy-mm-dd.'",
     'any.required': "A chave 'end_date' é obrigatória para listar os detalhes.'"
   }),
-})
+}).unknown(false).messages({ 'object.unknown': "O objeto informado para listagem possui uma chave desconhecida dentro da mesma. Verifique a documentação para obter as chaves válidas para listagem." });
 
 const loginSchema = Joi.object({
   email: Joi.string().required().email().messages({
@@ -75,7 +75,7 @@ const loginSchema = Joi.object({
     'string.empty': "O preenchimento da chave 'password' é obrigatório.",
     'any.required': "A chave 'password' é obrigatória para login.'"
   })
-})
+}).unknown(false).messages({ 'object.unknown': "O objeto informado para login possui uma chave desconhecida dentro da mesma. Verifique a documentação para obter as chaves válidas para login." });
 
 
   export default defaultSchema;
