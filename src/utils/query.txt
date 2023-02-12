@@ -1,0 +1,62 @@
+SELECT
+  solicitacoes.id AS solicitacao_id,
+  solicitacoes.tipo_servico,
+  solicitacoes.created_at,
+  solicitacoes.valor_total,
+  solicitacoes.distancia_total,
+  solicitacoes.tempo_total,
+  solicitacoes.empresa,
+  veiculos.id AS veiculo_id,
+  veiculos.placa,
+  veiculos.modelo,
+  veiculos.marca,
+  veiculos.ano,
+  veiculos.coordenadas_entrega,
+  veiculos.endereco_entrega,
+  veiculos.distancia_total AS distancia_entrega,
+  veiculos.duracao_total AS duracao_entrega,
+  veiculos.ordem_de_entrega
+FROM
+  solicitacoes
+  JOIN veiculos ON veiculos.id_solicitacao = solicitacoes.id
+WHERE
+  solicitacoes.id = :solicitacao_id
+ORDER BY
+  veiculos.ordem_de_entrega
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT 
+  empresa, 
+  count(id) as total_solicitacoes, 
+  to_char(sum(valor_total), 'FM999999990.00') as soma_valor
+FROM solicitacoes 
+WHERE empresa = 'MAKITA'
+  AND created_at >= '2023-02-11'
+  AND created_at < '2023-02-12'
+GROUP BY empresa;
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT
+  solicitacoes.id AS solicitacao_id,
+  veiculos.ordem_de_entrega,
+  veiculos.endereco_entrega,
+  solicitacoes.tipo_servico,
+  solicitacoes.created_at,
+  solicitacoes.valor_total,
+  solicitacoes.distancia_total,
+  solicitacoes.tempo_total,
+  solicitacoes.empresa,
+  veiculos.id AS veiculo_id,
+  veiculos.placa,
+  veiculos.modelo,
+  veiculos.marca,
+  veiculos.ano,
+  veiculos.coordenadas_entrega,
+  veiculos.distancia_total AS distancia_entrega,
+  veiculos.duracao_total AS duracao_entrega
+FROM
+  solicitacoes
+  JOIN veiculos ON veiculos.id_solicitacao = solicitacoes.id
+ORDER BY
+  id_solicitacao
