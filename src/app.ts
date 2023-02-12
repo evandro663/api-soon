@@ -12,7 +12,7 @@ class App {
 
     this.config();
 
-    this.app.get('/', (req, res) => res.json({ ok: true }));
+    this.app.get('/', (req, res) => res.json({ ok: 'Api Online.' }));
   }
 
   private config(): void {
@@ -37,5 +37,4 @@ class App {
 
 export { App };
 
-// A execução dos testes de cobertura depende dessa exportação
 export const { app } = new App();
