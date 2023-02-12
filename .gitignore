@@ -3,3 +3,8 @@ node_modules.tar.gz
 /node_modules
 *.http
 .env
+dist/app.js
+dist/Middlewares/errorHandlerMiddleware.js
+dist/Middlewares/tokenValidationMiddleware.js
+dist/utils/erros.js
+src/index.js
