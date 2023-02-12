@@ -22,7 +22,7 @@ Para que a aplicação possa ser executada e testada em ambiente local de desenv
 
 1. Crie uma pasta em um local onde você tenha direitos de gravação e leitura;
 2. Descompacte o arquivo zip e copie os arquivos da aplicação para a pasta criada
-3. Alterar dados de acesso ao banco de dados, caso seja necessário, editando os arquivos "docker-compose.yml" e "ormconfig.json" na raiz do projeto.
+3. Alterar dados de acesso ao banco de dados, caso seja necessário, editando os arquivos "docker-compose.yml" e src/database/config/config.ts.
 4. Todos os passos a seguir devem ser executados em linha de comando, a partir do local onde o projeto foi copiado
 5. Instalar os pacotes necessários para a execução da aplicação, digitando os comandos:
 
@@ -63,7 +63,6 @@ Abra uma nova seção de linha de comando, na mesma pasta do passo anterior, ond
 - Testar o acesso a API através de [http://localhost:3001/](http://localhost:3001/)
 
 
-
 ### Executar e testar a aplicação via Postman
 
 1. Para usar o Postman para testar a API do projeto apiSoon, siga os seguintes passos:
@@ -75,5 +74,13 @@ Abra uma nova seção de linha de comando, na mesma pasta do passo anterior, ond
 7. (Opcional) Adicione parâmetros à requisição, se necessário, na aba "Params"
 8. Clique no botão "Send" para enviar a requisição
 9. Verifique a resposta da requisição na aba "Response"
+
+
+### Executar e testar a aplicação com Debuger
+Esta aplicação já está configurada para executar com debugger.
+
+1. Clique em executar e depurar na aba lateral do VSCode.
+2. Na guia superior selecione "testes" ou "dev" e clique em "Iniciar Depuração".
+3. Adicione seus breakpoints.
 
 <br>
