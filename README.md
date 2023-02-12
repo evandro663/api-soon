@@ -1,6 +1,7 @@
 apiSoon
 
-O projeto apiSoon, aplicação para criar solicitações e registro de demanda para realização de algum serviço que neste contexto é movimentar algum veículo através de um guincho ou de um caminhão cegonha.
+A apiSoon é destinada ao gerenciamento de serviços de logística e assistência veicular. Um dos seus serviços é a movimentação de veículos para diferentes locais.
+Usuários da API podem criar uma solicitação de serviço para registrar sua demanda. A solicitação pode incluir informações como o tipo de serviço (guincho ou cegonha), data e hora de criação da solicitação, distância total e tempo total do percurso, distância e tempo de cada entrega, valor total do serviço, endereço de coleta e entrega (incluindo latitude e longitude), empresa solicitante, veículos a serem coletados e entregues.
 
 Para que a aplicação possa ser executada e testada em ambiente local de desenvolvimento, alguns itens de software devem estar previamente instalados.
 
