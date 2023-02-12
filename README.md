@@ -10,7 +10,7 @@ Para que a aplicação possa ser executada e testada em ambiente local de desenv
 - Docker Compose [(Guia de Instalação)](https://docs.docker.com/compose/install/)
 - Postman [(Guia de Instalação)](https://www.postman.com/downloads/).
 
-- O usuário deve ter também uma chave Api Google matrix válida. A qual deverá ser informada nas variáveis de ambiente na raiz do projeto com uma chave API_KEY.
+- O usuário deve possuir uma chave Api Google matrix válida. A qual deverá ser informada nas variáveis de ambiente na raiz do projeto com uma chave API_KEY.
 
 ## Requisitos opcionais
 
