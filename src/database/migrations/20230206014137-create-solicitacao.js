@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('solicitacao', {
+    await queryInterface.createTable('solicitacoes', {
       id: { 
         type: Sequelize.INTEGER,
         allowNull: false, 
@@ -12,25 +12,31 @@ module.exports = {
       tipo_servico: {
         type: Sequelize.STRING,
       },
-      data_servico: {
+      created_at: {
+        allowNull: false,
         type: Sequelize.DATE,
+        field: 'created_at',
       },
-      hora_servico: {
+      coordenadas_origem: {
         type: Sequelize.STRING,
-      },
-      tempo_total: {
-        type: Sequelize.STRING
+        allowNull: false, 
       },
       valor_total: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL(15, 2),
       },
       distancia_total: {
         type: Sequelize.INTEGER
+      },
+      tempo_total: {
+        type: Sequelize.INTEGER
+      },
+      empresa: {
+        type: Sequelize.STRING
       },
     });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('solicitacao');
+    await queryInterface.dropTable('solicitacoes');
   }
 };

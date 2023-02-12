@@ -5,6 +5,7 @@ const errors: Record<string, number> = {
   UnauthorizedError: 401,
   NotFoundError: 404,
   SequelizeUniqueConstraintError: 409,
+  DataBaseError: 500
 };
 
 const errorHandlerMiddleware = (err: Error, _req: Request, res: Response, _next: NextFunction) => {
