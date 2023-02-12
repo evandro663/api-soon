@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.DECIMAL(15, 2),
       },
       distancia_total: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL(15, 2),
       },
       tempo_total: {
         type: Sequelize.INTEGER
