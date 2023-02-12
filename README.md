@@ -70,7 +70,7 @@ Abra uma nova seção de linha de comando, na mesma pasta do passo anterior, ond
 3. Clique no botão "New" no canto superior esquerdo da tela
 4. Selecione a opção "Request"
 5. Insira o endereço URL da API do projeto apiSoon, que é http://localhost:3001/, na barra de endereço do Postman
-6. Selecione o tipo de requisição desejado, como GET, POST, PUT ou DELETE, de acordo com a operação que deseja realizar na API
+6. Selecione o tipo de requisição desejado, como GET, POST, de acordo com a operação que deseja realizar na API
 7. (Opcional) Adicione parâmetros à requisição, se necessário, na aba "Params"
 8. Clique no botão "Send" para enviar a requisição
 9. Verifique a resposta da requisição na aba "Response"
