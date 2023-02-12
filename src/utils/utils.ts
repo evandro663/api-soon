@@ -33,7 +33,7 @@ export async function getBestRoute(veiculos: IVeiculo[], origem: string) {
   return addresses.map((veiculo, index) => ({
     placa: veiculo.placa,
     endereco_entrega: veiculo.address,
-    distancia_total: distances[index].distance.value,
+    distancia_total: distances[index].distance.value/1000,
     address: addresses[index],
     duracao_total: distances[index].duration.value,
     ordem_de_entrega: index + 1,
@@ -74,5 +74,5 @@ export function calculateTotalValue(tipoServico: string, distanciaTotal: number)
   }
 
   const { valorFixo, valorPorKm } = valores;
-  return distanciaTotal > 20000 ? (distanciaTotal - 20000) * valorPorKm + valorFixo : valorFixo;
+  return distanciaTotal > 20 ? (distanciaTotal - 20) * valorPorKm + valorFixo : valorFixo;
 }
